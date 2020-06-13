@@ -13,5 +13,6 @@ class Transfer
     if @sender.valid? && @receiver.valid?
       return true
     end
+    return false
   end
 end
