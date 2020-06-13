@@ -1,6 +1,6 @@
 class Transfer
 
-  attr_accessor :sender, :receiver, :status, :amount, :@sender_status, :@receiver_status
+  attr_accessor :sender, :receiver, :status, :amount
 
   def initialize(sender, receiver, amount)
     @sender = sender
@@ -10,8 +10,6 @@ class Transfer
   end
 
   def valid?
-    # @sender_status = @sender.valid?
-    # @receiver_status = @receiver.valid?
     if @sender.valid? && @receiver.valid?
       return true
     end
