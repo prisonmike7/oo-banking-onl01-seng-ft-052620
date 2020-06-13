@@ -25,10 +25,9 @@ class Transfer
       @receiver.deposit(@amount)
       @status = "complete"
       @transfer_counter += 1
-    else
-      @status = "rejected"
-      return "Transaction rejected. Please check your account balance."
     end
+    @status = "rejected"
+    return "Transaction rejected. Please check your account balance."
   end
 
 
