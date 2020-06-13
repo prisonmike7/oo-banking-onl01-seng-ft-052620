@@ -22,5 +22,5 @@ class Transfer
   end
 
 
-  
+
 end
