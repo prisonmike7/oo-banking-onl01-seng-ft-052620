@@ -17,14 +17,14 @@ class Transfer
   end
 
   def execute_transaction
-    if @transfer_counter > 0 && @sender.valid? && @receiver.valid?
-      @status = "rejected"
-      return "Transaction rejected. Please check your account balance."
+    if @transfer_counter == 0 && @sender.valid? && @receiver.valid?
+      @transfer_counter += 1
+      @sender.deposit(-@amount)
+      @receiver.deposit(@amount)
+      @status = "complete"
     end
-    @transfer_counter += 1
-    @sender.deposit(-@amount)
-    @receiver.deposit(@amount)
-    @status = "complete"
+    @status = "rejected"
+    return "Transaction rejected. Please check your account balance."
   end
 
 
