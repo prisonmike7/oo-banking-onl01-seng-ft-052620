@@ -12,7 +12,6 @@ class Transfer
   end
 
   def valid?(amount)
-
     if @sender.valid?(amount) || @receiver.valid?(amount)
       return true
     end
