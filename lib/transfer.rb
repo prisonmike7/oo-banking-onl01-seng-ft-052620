@@ -1,3 +1,5 @@
+require pry
+
 class Transfer
 
   attr_accessor :sender, :receiver, :status, :amount
@@ -18,6 +20,7 @@ class Transfer
 
   def execute_transaction
     if valid?
+      binding.pry
       @sender.deposit(-@amount)
       @receiver.deposit(@amount)
       @status = "complete"
