@@ -20,7 +20,7 @@ class Transfer
   end
 
   def execute_transaction
-    if valid?
+    if self.valid?
       @transfer_counter += 1
       @sender.deposit(-@amount)
       @receiver.deposit(@amount)
