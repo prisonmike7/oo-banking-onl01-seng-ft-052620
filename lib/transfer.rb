@@ -10,7 +10,7 @@ class Transfer
   end
 
   def valid?
-    if @sender.valid?(amount) || @receiver.valid?(amount)
+    if @sender.valid? || @receiver.valid?
       return true
     end
   end
