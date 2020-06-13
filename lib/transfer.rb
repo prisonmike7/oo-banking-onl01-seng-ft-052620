@@ -26,8 +26,8 @@ class Transfer
       @status = "complete"
       @transfer_counter += 1
     else
-      "Transaction rejected. Please check your account balance."
       @status = "rejected"
+      "Transaction rejected. Please check your account balance."
     end
   end
 
