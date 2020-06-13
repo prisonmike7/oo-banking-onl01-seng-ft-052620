@@ -19,7 +19,7 @@ class Transfer
   end
 
   def execute_transaction
-    if valid?
+    if self.valid?
       binding.pry
       @sender.deposit(-@amount)
       @receiver.deposit(@amount)
