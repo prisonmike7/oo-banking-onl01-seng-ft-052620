@@ -17,7 +17,10 @@ class BankAccount
     "Your balance is $#{@balance}."
   end
 
-  def valid?
+  def valid?(*amount)
+    if !amount.nil?
+      @balence -= amount
+    end
     if @balance <= 0 || @status == "closed"
       return false
     end
