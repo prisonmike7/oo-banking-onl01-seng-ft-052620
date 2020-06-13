@@ -11,8 +11,8 @@ class Transfer
 
   def valid?(*amount)
     if amount
-      @sender.balance -= amount
-      @receiver.balance -= amount
+      @sender.balance -= @amount
+      @receiver.balance -= @amount
     end
     if @sender.valid? || @receiver.valid?
       return true
